@@ -7,6 +7,9 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Paper from '@material-ui/core/Paper';
 import Draggable from 'react-draggable';
+import VerticalLinearStepper from './VerticalLinearStepper';
+import * as Actions from '../Store/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 function PaperComponent(props) {
   return (
@@ -17,14 +20,14 @@ function PaperComponent(props) {
 }
 
 export default function DraggableDialog(props) {
-  const [open, setOpen] = React.useState(props.open);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const [open, setOpen] = React.useState(props.open);
+  const open = useSelector((state)=>state.protfolioReducer.opendialog);
+  const projectData = useSelector((state)=>state.protfolioReducer.ProjectDetail);
+  const dispatch = useDispatch();
+  
 
   const handleClose = () => {
-    setOpen(false);
+    dispatch(Actions.CloseDialog());
   };
 
   return (
@@ -33,24 +36,24 @@ export default function DraggableDialog(props) {
         open={open}
         onClose={handleClose}
         PaperComponent={PaperComponent}
+        // maxWidth="xl"
         aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
-          Subscribe
+          Details
         </DialogTitle>
         <DialogContent>
-          <DialogContentText>
+        <VerticalLinearStepper/>
+          {/* <DialogContentText>
             To subscribe to this website, please enter your email address here. We will send updates
             occasionally.
-          </DialogContentText>
+          </DialogContentText> */}
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClose} color="primary">
-            Subscribe
-          </Button>
+         
         </DialogActions>
       </Dialog>
     </div>

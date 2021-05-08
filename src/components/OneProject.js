@@ -7,7 +7,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import AuditPic from '../Assets/ProjectPic/Audit.jpg'
+import AuditPic from '../Assets/ProjectPic/Audit.jpg';
+import * as Actions from '../Store/actions';
+import reducer from '../Store/reducers';
+import { useDispatch, useSelector } from 'react-redux';
 const useStyles = makeStyles({
   root: {
     maxWidth: 245,
@@ -22,9 +25,9 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OneProject(props) {
+function OneProject(props) {
   const classes = useStyles();
-
+  const dispatch = useDispatch();
   return (
     
     <Card className={classes.root}>
@@ -45,10 +48,12 @@ export default function OneProject(props) {
       </CardActionArea>
       <CardActions>
         
-        {/* <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={ev=>dispatch(Actions.OpenDialog(props.project))}>
           Read More
-        </Button> */}
+        </Button>
       </CardActions>
     </Card>
   );
 }
+
+export default OneProject

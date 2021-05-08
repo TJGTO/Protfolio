@@ -4,6 +4,7 @@ import OneProject from './OneProject';
 import {ProjectData} from '../Assets/ProjectData';
 import DraggableDialog from './DraggableDialog';
 
+
 function Projects() {
     return (
         <div style={{height: "70vh",background: "#ede7cf",marginTop:"-5%"}}>
@@ -16,7 +17,7 @@ function Projects() {
             }  
              
             </ProjectsWrapper>
-            {/* <DraggableDialog open ={true}/> */}
+            <DraggableDialog open ={true}/>
         </div>
     )
 }

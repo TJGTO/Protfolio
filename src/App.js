@@ -6,6 +6,8 @@ import MoreAbout from "./components/MoreAbout";
 import Projects from "./components/Projects";
 import StickyFooter from "./components/StickyFooter";
 import Footer from "./components/Footer";
+
+
 function App() {
   return (
     <div>
