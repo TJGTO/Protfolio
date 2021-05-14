@@ -11,6 +11,7 @@ function Header() {
         let localdate = systemdate.toLocaleString();
         let date = new Date(localdate);
         let hour = date.getHours();
+        
         if(hour < 14 && hour > 5){
 
            settime("Good Morning");
@@ -33,6 +34,7 @@ function Header() {
            </Greeting>
            <About>
            <AboutBox>
+            
               <ImageBox>
                  <Profilepic src={logo}/>
               </ImageBox>
@@ -65,12 +67,17 @@ const Greeting = styled.div`
   display: flex;
   justify-content : center;
   align-items: center;
-  font-family:"Comic Sans MS"
+  font-family:"Comic Sans MS";
+  @media (max-width: 768px) {
+    font-size: 20px;
+    height: 20vh;
+  }
 `;
 
 const AboutBox = styled.div`
+  
   display : flex;
-  z-index :999;
+  flex-direction: row;
   justify-content : space-between;
   padding-top : 10%;
   padding-left : 10%;
@@ -81,11 +88,27 @@ const AboutBox = styled.div`
   margin-left : 100px;
   border: 1px solid black;
   box-shadow : 20px 20px 20px rgb(153, 153, 102);
+  @media (max-width: 768px) {
+    display : flex;
+    flex-direction: column;
+    height: 210vh;
+    justify-content : center;
+    align-items: center;
+    padding-top : 1%;
+    padding-left : 5%;
+    padding-right : 5%;
+    margin-right : 30px;
+    margin-left : 30px;
+  }
   
 `;
 const About = styled.div`
     background: #ede7cf;
     height: 75vh;
+    @media (max-width: 768px) {
+      
+      height: 220vh;
+    }
 `;
 const imageanimation = keyframes`
   0% {
@@ -110,6 +133,16 @@ const ImageBox = styled.div`
       height: 32vh;
       width : 26%;
     }
+    @media (max-width: 768px) {
+      height: 60vh;
+      width: 80%;
+      &:hover { 
+        box-shadow : 20px 20px 20px rgb(153, 153, 102);
+        height: 62vh;
+        width : 82%;
+      }
+    }
+    
 `;
 const aboutanimation = keyframes`
   0% {
@@ -135,7 +168,20 @@ const DescBox = styled.div`
       box-shadow : 20px 20px 20px rgb(153, 153, 102);
       height: 32vh;
       width : 26%;
+     
     }
+    @media (max-width: 768px) {
+      height: 60vh;
+      width: 80%;
+      margin-top : 10%;
+      &:hover {
+        background: #f0eae9; 
+        box-shadow : 20px 20px 20px rgb(153, 153, 102);
+        height: 62vh;
+        width : 82%;
+      }
+    }
+   
     
 `;
 const designationanimation = keyframes`
@@ -163,6 +209,18 @@ const Designation = styled.div`
     height: 32vh;
     width : 26%;
   }
+  @media (max-width: 768px) {
+    height: 60vh;
+    width: 80%;
+    margin-top : 10%;
+    &:hover {
+      background: #f0eae9; 
+      box-shadow : 20px 20px 20px rgb(153, 153, 102);
+      height: 62vh;
+      width : 82%;
+    }
+  }
+  
 `;
 const Profilepic= styled.img`
    width : 100%;

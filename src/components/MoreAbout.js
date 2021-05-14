@@ -7,6 +7,7 @@ import SmallChips from './SkillsSection'
 function MoreAbout() {
     return (
         <div>
+           
             
             <MoreAboutWrapper>
                 <MoreAbouts>
@@ -29,6 +30,10 @@ function MoreAbout() {
                  </Skillsdiv>
                 </MoreAbouts>
                 <IframeDiv>
+                <Hiddendiv>
+                <h2 style={{fontFamily:"Comic Sans MS",}}>Resume</h2>
+                </Hiddendiv>
+                
                 <iframe src={resume} width="100%" height="100%"/>
                 </IframeDiv>
             </MoreAboutWrapper>
@@ -38,12 +43,21 @@ function MoreAbout() {
 }
 
 export default MoreAbout
+
 const MoreAboutWrapper = styled.div`
    background: #ede7cf;
    height: 100vh;
    display : flex;
-   
+
    justify-content: space-between;
+   @media (max-width:768px){
+    display : flex;
+    flex-direction: column;
+    height: 380vh;
+    
+    align-items: center;
+   
+   }
 `;
 const MoreAbouts = styled.div`
    
@@ -51,6 +65,13 @@ const MoreAbouts = styled.div`
    height: 80vh;
    padding-top : 3%;
    margin-left : 60px;
+   @media (max-width:768px){
+    
+    height: 100vh;
+    width: 80%;
+    padding-top : 0.5%;
+    margin-top : 10%;
+   }
 `
 const IframeDiv = styled.div`
    
@@ -59,19 +80,39 @@ const IframeDiv = styled.div`
    height: 79vh;
    padding-top : 2%;
    margin-right : 60px;
+   @media (max-width:768px){
+    
+    margin-top:-5%;
+    margin-left : 2%;
+    margin-right : 0px;
+    height: 100vh;
+    width: 80%;
+    padding-top : 0%;
+    padding-bottom : 40%;
+    
+   }
 `
 const Skillsdiv = styled.div`
    
    
    height: 20vh;
    background: #ffff;
+   @media (max-width:768px){
+    height: 60vh;
+   }
    
 `;
 const Skill = styled.div`
     background : #f0ead6;
-     height: 3vh;
+    height: 3vh;
     width: 50%;
     
+`;
+const Hiddendiv = styled.div`
+   display : none;
+   @media (max-width:768px){
+       display : inline;
+   }
 `;
 const Wrap = styled.div`
    display : flex;

@@ -60,8 +60,52 @@ return (
         <Column></Column>
 		</Row>
 	</Containers>
+	<MobileFooter>
+	<div style={{marginLeft:"30%"}}>
+	<table>
+		<tbody>
+			<tr>
+				<td >
+				 <a target="_blank" href="#"><PhoneIcon/></a>
+				</td>
+				<td>
+					:  7047241849
+				</td>
+				
+			</tr>
+			<tr>
+				<td>
+				<a target="_blank" href="https://www.facebook.com/nirmalya.mondol"><EmailIcon/></a>
+				</td>
+				<td>
+					:  tathagat5121@gmail.com
+				</td>
+			</tr>
+			<tr>
+			<td>
+			<a target="_blank" href="https://www.facebook.com/nirmalya.mondol"><FacebookIcon/>    </a>
+				</td>
+				<td>
+					:  Tathagata Mondal
+				</td>
+			</tr>
+			<tr>
+			<td>
+				<a target="_blank" href="https://www.linkedin.com/in/tathagata-mandal-245980153"><EmailIcon/></a>
+				</td>
+				<td>
+					:  Tathagata Mondal
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	 <br></br>
+	 <div style={{color:"red",marginLeft:"20%"}}>@open with Pc for better experience</div>
+	</MobileFooter>
+
     <br></br>
-   
+	 
     
 	</Box>
 );
@@ -74,7 +118,16 @@ const CopyRight =styled.div`
 justify-content : center;
 align-items: center;
 `;
-
+const MobileFooter =styled.div`
+   
+    display :none;
+	@media (max-width: 1000px) {
+		display :inline;
+		margin-left: 30%;
+		
+	}
+   
+`;
 const Box = styled.div`
 padding: 80px 60px;
 background: #f0eae9;
@@ -91,6 +144,9 @@ const Containers = styled.div`
 	max-width: 1000px;
 	margin: 0 auto;
 	/* background: red; */
+	@media (max-width:768px){
+		display : none;
+	}
 `
 
 const Column = styled.div`

@@ -18,10 +18,15 @@ const useStyles = makeStyles({
     '&:hover':{
         boxShadow : "20px 20px 20px rgb(153, 153, 102)",
         height: "95%",
+    },
+    '@media(minWidth: 768px)' : {
+      maxWidth: 500,
+      height: "70%",
     }
   },
   media: {
     height: 140,
+
   },
 });
 
@@ -53,6 +58,7 @@ function OneProject(props) {
         </Button>
       </CardActions>
     </Card>
+    
   );
 }
 
