@@ -1,6 +1,6 @@
 Protfolio application :
 
-Frontend Build byt React Js
+Frontend Build by React Js
 
 Material Ui and styled components is used to design the frontend
 
